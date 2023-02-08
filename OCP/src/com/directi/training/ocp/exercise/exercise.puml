@@ -1,0 +1,21 @@
+
+@startuml exercice
+enum ResourceType {
+    TIME_SLOT
+    SPACE_SLOT
+}
+
+class ResourceTypeAllocator{
+     - {static} INVALID_RESOURCE_ID : int
+     - markSpaceSlotFree (resourceId:int)
+     - markTimeSlotFree(resourceId:int)
+     - markSpaceSlotBusy(resourceId:int)
+      - findFreeSpaceSlot()
+      - findFreeTimeSlot()
+      -  markTimeSlotBusy(resourceId:int)
+}
+
+
+ResourceTypeAllocator -- ResourceType : allocate >
+ResourceTypeAllocator -- ResourceType : free >
+@enduml

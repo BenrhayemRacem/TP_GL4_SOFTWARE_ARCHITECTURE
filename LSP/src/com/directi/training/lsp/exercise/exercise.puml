@@ -1,0 +1,31 @@
+
+@startuml exercice
+
+
+class Pool{
+   
+   + run()
+   - quack()
+   - swim()
+   + {static} main()
+}
+
+class Duck{
+     + quack()
+     + swim()
+
+}
+
+class ElectronicDuck extends Duck {
+    +quack()
+    +swim()
+
+    - _on : boolean
+}
+
+Pool -- Duck 
+Pool -- ElectronicDuck
+
+
+
+@enduml

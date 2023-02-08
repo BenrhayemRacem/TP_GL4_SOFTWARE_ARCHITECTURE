@@ -1,0 +1,26 @@
+
+@startuml exercice_refactored
+
+interface IResource {
+   + markSlotFree() 
+   + markSlotBusy()
+   + findFree()
+}
+
+class ResourceTypeAllocator{
+     - {static} INVALID_RESOURCE_ID : int
+    
+}
+
+class SpaceSlot implements IResource {
+
+}
+class TimeSlot implements IResource {
+    
+}
+
+
+ResourceTypeAllocator -- IResource : allocate >
+ResourceTypeAllocator -- IResource : free >
+
+@enduml

@@ -1,0 +1,53 @@
+
+@startuml exercice_refactored
+
+interface IDoor{
+     + lock()
+     + unlock()
+     +open()
+     +close()
+     
+     
+}
+interface ISensorDoor {
++proximityCallback()
+}
+
+interface ITimerDoor {
++timeOutCallback()
+}
+
+class Timer{  
+   
+}
+
+class Sensor{
+    
+   - isPersonClose() : boolean
+}
+
+
+class SensingDoor implements IDoor,ISensorDoor {
+
+- _locked : boolean
+- _opened : boolean
+
+}
+
+class TimedDoor implements IDoor , ITimerDoor {
+    
+    - _locked : boolean
+    - _opened : boolean
+     - {static} TIME_OUT : int
+}
+
+
+
+Sensor -- ISensorDoor : register >
+
+Timer -- ITimerDoor : register >
+
+
+
+
+@enduml

@@ -1,0 +1,32 @@
+
+@startuml exercice_refactored
+
+
+class Pool{
+   
+   + run()
+   - quack()
+   - swim()
+   + {static} main()
+}
+
+interface IDuck{
+     + quack()
+     + swim()
+
+}
+class NormalDuck implements IDuck {
+
+}
+
+class ElectronicDuck implements IDuck {
+    
+    - _on : boolean
+}
+
+Pool -- IDuck 
+
+
+
+
+@enduml

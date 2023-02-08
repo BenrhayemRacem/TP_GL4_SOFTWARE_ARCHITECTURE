@@ -1,0 +1,23 @@
+
+@startuml exercice
+class Car {
+    - _id: String
+    - _model : String
+    - _brand : String 
+
+    + Car(id:String ,model:String,brand:String)
+    + getId() : String
+    + getModel() : String
+    + getBrand() : String
+}
+
+
+class CarManager{
+     + getFromDb(carId:String)
+     + getCarsNames() : String
+     + getBestCar() 
+}
+
+CarManager  -- Car : have >
+
+@enduml

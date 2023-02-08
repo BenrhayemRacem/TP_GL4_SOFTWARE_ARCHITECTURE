@@ -1,0 +1,39 @@
+
+@startuml exercice_refactored
+
+interface IDatabase {
+    + write(inputString:String) : int
+}
+
+class MyDatabase implements IDatabase{  
+     - {static} _data : Map<Integer, String>
+     - {static} _count : int
+        
+}
+
+interface IEncodingModule {
++ encodeWithFiles()
++ encodeBasedOnNetworkAndDatabase()
+}
+class EncodingModule implements IEncodingModule {
+}
+
+
+
+class EncodingModuleClient  {
+
++ {static} main()
+
+}
+
+
+
+
+EncodingModule -- IDatabase 
+
+EncodingModuleClient -- IEncodingModule 
+
+
+
+
+@enduml

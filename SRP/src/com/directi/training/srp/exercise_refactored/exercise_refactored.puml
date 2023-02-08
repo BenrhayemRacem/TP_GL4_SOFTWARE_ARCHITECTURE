@@ -1,0 +1,33 @@
+
+@startuml exercice_refactored
+class Car {
+    - _id: String
+    - _model : String
+    - _brand : String 
+
+    + Car(id:String ,model:String,brand:String)
+    + getId() : String
+    + getModel() : String
+    + getBrand() : String
+}
+
+
+class CarDB{
+     + getFromDb(carId:String)
+     
+     
+}
+
+class CarFormatter{
++ getCarsNames() : String
+}
+class CarComparator {
++ getBestCar() 
+}
+
+CarDB  -- Car : contains >
+CarDB -- CarFormatter 
+CarDB -- CarComparator
+
+@enduml
+
